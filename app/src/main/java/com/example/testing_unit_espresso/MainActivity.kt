@@ -12,9 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btn_click_me = findViewById(R.id.button) as Button
-        btn_click_me.setOnClickListener {
+        val buttonClickName = findViewById(R.id.button) as Button
+        buttonClickName.setOnClickListener {
             textViewResult.text = editTextName.text
+            Toast.makeText(this@MainActivity, "You clicked .", Toast.LENGTH_SHORT).show()
+        }
+
+        val buttonClickAge = findViewById(R.id.buttonAge) as Button
+        buttonClickAge.setOnClickListener {
+            textViewAge.text = editTextAge.text
+            Toast.makeText(this@MainActivity, "You clicked .", Toast.LENGTH_SHORT).show()
+        }
+
+        val buttonClickBoth = findViewById(R.id.buttonShowBoth) as Button
+        buttonClickBoth.setOnClickListener {
+            textViewResult.text = editTextName.text
+            textViewAge.text = editTextAge.text
             Toast.makeText(this@MainActivity, "You clicked .", Toast.LENGTH_SHORT).show()
         }
     }
